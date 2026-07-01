@@ -21,7 +21,7 @@ export default function Navbar() {
       {/* --- Top Contact Bar (උඩම තියෙන දුරකථන අංකය සහ ඊමේල් එක) --- */}
       <div className="bg-white text-gray-900 text-lg py-2 px-6 md:px-12 flex justify-between border-b border-gray-200">
         <span className="font-medium">📞 Call us: +94 36 223 7489</span>
-        <span className="font-medium hidden md:block">✉️ Message us: vishmikavindya722@gmail.com</span>
+        <span className="font-medium hidden md:block">✉️ Message us: mjmotorsah@gmail.com</span>
       </div>
 
       {/* --- Main Navbar --- */}
