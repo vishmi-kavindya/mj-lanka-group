@@ -9,6 +9,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export default function ContactPage() {
+  const [status, setStatus] = useState({ type: '', message: '' });
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,12 +18,27 @@ export default function ContactPage() {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // මෙතනින් පස්සේ Backend එකට Data යවන කෝඩ් එක ලියන්න පුළුවන්
-    alert('Thank you for contacting us! We will get back to you soon.');
-    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-  };
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setStatus({ type: 'loading', message: 'Sending...' }); // පණිවිඩය යවන අතරතුර
+
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
+    });
+
+    if (res.ok) {
+      setStatus({ type: 'success', message: 'Message sent successfully!' });
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+    } else {
+      setStatus({ type: 'error', message: 'Failed to send. Please try again.' });
+    }
+  } catch (error) {
+    setStatus({ type: 'error', message: 'Something went wrong!' });
+  }
+};
 
   return (
     <>
@@ -108,6 +124,7 @@ export default function ContactPage() {
             <h3 className="text-xl font-bold text-white mb-3">Call Us</h3>
             <p className="text-gray-300 font-medium mb-1">+94 36 223 7489</p>
             <p className="text-gray-300 font-medium">+94 78 885 0888</p>
+            <p className="text-gray-300 font-medium">+94 77 832 2376</p>
           </motion.div>
 
           {/* 4. Email Card */}
@@ -225,13 +242,18 @@ export default function ContactPage() {
                 <span>Send Message</span>
                 <Send size={20} />
               </button>
+              {status.message && (
+  <p className={`mt-4 text-center font-medium ${status.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>
+    {status.message}
+  </p>
+)}
             </form>
           </div>
 
           {/* Right Side: Google Map Placeholder (Iframe) */}
           <div className="w-full lg:w-1/2 min-h-[400px] lg:min-h-full bg-gray-200 relative">
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56557.42499051527!2d80.16042168003625!3d6.921690899348329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3a9004602eaef%3A0x666a5734d8b22ad5!2sMJ%20Motors!5e0!3m2!1sen!2slk!4v1782656444373!5m2!1sen!2slk" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253492.84641653515!2d79.95577501869415!3d6.911430655357435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3a9004602eaef%3A0x666a5734d8b22ad5!2sMJ%20Motors!5e0!3m2!1sen!2slk!4v1783019641318!5m2!1sen!2slk" 
               className="absolute inset-0 w-full h-full border-0"
               allowFullScreen={true}
               loading="lazy" 

@@ -55,7 +55,7 @@ export default function Footer() {
               <span className="text-[#E53935] mt-1">📞</span>
               <div>
                 <strong className="text-gray-200 block mb-1">Call Us:</strong>
-                +94 778 905 771
+                +94 36 223 7489
               </div>
             </li>
           </ul>
