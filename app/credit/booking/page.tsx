@@ -56,13 +56,17 @@ export default function LoanApplicationPage() {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen pb-24">
+    <div className="bg-gray-50 min-h-screen pb-28">
       {/* --- 1. Hero Banner --- */}
-      <section className="relative w-full h-[400px] flex flex-col items-center justify-center text-center overflow-hidden bg-black">
-        <img src="/credit.jpg" alt="Apply for a Loan" className="absolute inset-0 w-full h-full object-cover opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/75 to-black"></div>
+      <section className="relative w-full h-[360px] flex flex-col items-center justify-center text-center overflow-hidden bg-black">
+        <img src="/credit.jpg" alt="Apply for a Loan" className="absolute inset-0 w-full h-full object-cover opacity-25" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/80 to-black"></div>
+        <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[450px] h-64 bg-[#D4AF37]/10 blur-[110px] rounded-full"></div>
 
         <div className="relative z-10 text-white px-4">
+          <span className="inline-block text-[#D4AF37] text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-6 border border-[#D4AF37]/40 bg-[#D4AF37]/10 rounded-full px-5 py-2">
+            Fast &amp; Simple Process
+          </span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -75,7 +79,7 @@ export default function LoanApplicationPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex items-center justify-center space-x-3 text-sm md:text-base text-gray-200"
+            className="flex items-center justify-center space-x-3 text-sm md:text-base text-gray-300"
           >
             <Link href="/credit" className="hover:text-[#D4AF37] transition">Home</Link>
             <span className="text-[#D4AF37] font-bold">&gt;</span>
@@ -91,11 +95,11 @@ export default function LoanApplicationPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="bg-white p-8 md:p-12 rounded-[2rem] shadow-2xl border border-gray-100"
+          className="bg-white p-8 md:p-12 rounded-[2.5rem] shadow-2xl border border-gray-100"
         >
           <div className="text-center mb-10">
             <h2 className="text-3xl font-extrabold text-black mb-3">Loan Application Form</h2>
-            <div className="w-16 h-1 bg-[#D4AF37] mx-auto rounded-full"></div>
+            <div className="w-16 h-1 bg-gradient-to-r from-[#f0d67a] via-[#D4AF37] to-[#b8892a] mx-auto rounded-full"></div>
             <p className="text-gray-500 mt-4">Fill in your details and we'll get back to you the same day.</p>
           </div>
 
@@ -110,7 +114,7 @@ export default function LoanApplicationPage() {
                   placeholder="Full Name"
                   value={formData.fullName}
                   onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                  className="w-full pl-12 pr-4 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] outline-none transition"
+                  className="w-full pl-12 pr-4 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none transition"
                   required
                 />
               </div>
@@ -127,7 +131,7 @@ export default function LoanApplicationPage() {
                     setFormData({ ...formData, phone: e.target.value });
                     setStatus(null);
                   }}
-                  className="w-full pl-12 pr-4 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] outline-none transition"
+                  className="w-full pl-12 pr-4 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none transition"
                   required
                 />
               </div>
@@ -143,7 +147,7 @@ export default function LoanApplicationPage() {
                   placeholder="john@example.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full pl-12 pr-4 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] outline-none transition"
+                  className="w-full pl-12 pr-4 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none transition"
                 />
               </div>
 
@@ -156,7 +160,7 @@ export default function LoanApplicationPage() {
                   placeholder="Colombo 07"
                   value={formData.location}
                   onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                  className="w-full pl-12 pr-4 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] outline-none transition"
+                  className="w-full pl-12 pr-4 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none transition"
                 />
               </div>
             </div>
@@ -168,7 +172,7 @@ export default function LoanApplicationPage() {
               <select
                 value={formData.assetType}
                 onChange={(e) => setFormData({ ...formData, assetType: e.target.value })}
-                className="w-full pl-12 pr-4 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] outline-none transition appearance-none text-gray-700"
+                className="w-full pl-12 pr-4 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none transition appearance-none text-gray-700"
               >
                 <option value="microfinance">Microfinance Group Loan</option>
                 <option value="business">Business Loan</option>
@@ -188,7 +192,7 @@ export default function LoanApplicationPage() {
                     type="date"
                     value={formData.preferredDate}
                     onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
-                    className="w-full pl-12 pr-4 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] outline-none transition"
+                    className="w-full pl-12 pr-4 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none transition"
                   />
                 </div>
               </div>
@@ -200,7 +204,7 @@ export default function LoanApplicationPage() {
                     type="time"
                     value={formData.preferredTime}
                     onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
-                    className="w-full pl-12 pr-4 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] outline-none transition"
+                    className="w-full pl-12 pr-4 py-4 rounded-2xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none transition"
                   />
                 </div>
               </div>
@@ -214,14 +218,14 @@ export default function LoanApplicationPage() {
                 placeholder="Loan amount required / special details..."
                 value={formData.notes}
                 onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                className="w-full p-4 rounded-2xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] outline-none transition resize-none"
+                className="w-full p-4 rounded-2xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none transition resize-none"
               ></textarea>
             </div>
 
             {/* Submit */}
             <button
               type="submit"
-              className="w-full bg-black text-white font-bold text-lg py-5 rounded-2xl hover:bg-zinc-900 transition-all duration-300 shadow-xl flex items-center justify-center space-x-2 transform hover:-translate-y-1"
+              className="w-full bg-gradient-to-r from-[#f0d67a] via-[#D4AF37] to-[#b8892a] hover:brightness-110 text-black font-bold text-lg py-5 rounded-2xl transition-all duration-300 shadow-[0_10px_35px_rgba(212,175,55,0.35)] hover:shadow-[0_10px_45px_rgba(212,175,55,0.5)] flex items-center justify-center space-x-2 transform hover:-translate-y-1"
             >
               <span>Submit Application</span>
               <Send size={20} />

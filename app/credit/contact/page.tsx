@@ -38,13 +38,17 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen pb-24">
+    <div className="bg-gray-50 min-h-screen pb-28">
       {/* --- 1. Hero Section --- */}
-      <section className="relative h-[350px] flex flex-col items-center justify-center text-center px-4 overflow-hidden bg-black">
-        <img src="/finance.jpg" alt="Contact Ceylon Credit Business" className="absolute inset-0 w-full h-full object-cover opacity-30" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black"></div>
+      <section className="relative h-[360px] flex flex-col items-center justify-center text-center px-4 overflow-hidden bg-black">
+        <img src="/finance.jpg" alt="Contact Ceylon Credit Business" className="absolute inset-0 w-full h-full object-cover opacity-25" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/75 to-black"></div>
+        <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[450px] h-64 bg-[#D4AF37]/10 blur-[110px] rounded-full"></div>
 
         <div className="relative z-10 max-w-3xl mx-auto px-4">
+          <span className="inline-block text-[#D4AF37] text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-6 border border-[#D4AF37]/40 bg-[#D4AF37]/10 rounded-full px-5 py-2">
+            We'd Love to Hear From You
+          </span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -57,7 +61,7 @@ export default function ContactPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex items-center justify-center space-x-3 text-sm md:text-base text-gray-200"
+            className="flex items-center justify-center space-x-3 text-sm md:text-base text-gray-300"
           >
             <Link href="/credit" className="hover:text-[#D4AF37] transition">Home</Link>
             <span className="text-[#D4AF37] font-bold">&gt;</span>
@@ -70,47 +74,49 @@ export default function ContactPage() {
       <section className="max-w-6xl mx-auto -mt-20 relative z-20 px-6">
         <div className="grid lg:grid-cols-5 gap-8">
           {/* Contact Info Cards */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-black text-white p-8 rounded-3xl shadow-xl h-full flex flex-col justify-center gap-8"
+              className="relative bg-black text-white p-9 rounded-[2rem] shadow-2xl h-full flex flex-col justify-center gap-8 overflow-hidden"
             >
-              <div className="flex items-start gap-4">
-                <div className="w-11 h-11 bg-[#D4AF37] text-black rounded-xl flex items-center justify-center flex-shrink-0">
+              <div className="pointer-events-none absolute -top-10 -right-10 w-56 h-56 bg-[#D4AF37]/10 blur-[80px] rounded-full"></div>
+
+              <div className="relative flex items-start gap-4">
+                <div className="w-11 h-11 bg-gradient-to-br from-[#f0d67a] via-[#D4AF37] to-[#b8892a] text-black rounded-xl flex items-center justify-center flex-shrink-0">
                   <MapPin size={20} />
                 </div>
                 <div>
                   <h4 className="font-bold mb-1">Head Office</h4>
-                  <p className="text-gray-300 text-sm">No. 268/1 Ratnapura Road, Getaheththa, Sri Lanka.</p>
+                  <p className="text-gray-400 text-sm">No. 268/1 Ratnapura Road, Getaheththa, Sri Lanka.</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="w-11 h-11 bg-[#D4AF37] text-black rounded-xl flex items-center justify-center flex-shrink-0">
+              <div className="relative flex items-start gap-4">
+                <div className="w-11 h-11 bg-gradient-to-br from-[#f0d67a] via-[#D4AF37] to-[#b8892a] text-black rounded-xl flex items-center justify-center flex-shrink-0">
                   <Phone size={20} />
                 </div>
                 <div>
                   <h4 className="font-bold mb-1">Call Us</h4>
-                  <p className="text-gray-300 text-sm">+94 36 223 7489</p>
+                  <p className="text-gray-400 text-sm">+94 36 223 7489</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="w-11 h-11 bg-[#D4AF37] text-black rounded-xl flex items-center justify-center flex-shrink-0">
+              <div className="relative flex items-start gap-4">
+                <div className="w-11 h-11 bg-gradient-to-br from-[#f0d67a] via-[#D4AF37] to-[#b8892a] text-black rounded-xl flex items-center justify-center flex-shrink-0">
                   <Mail size={20} />
                 </div>
                 <div>
                   <h4 className="font-bold mb-1">Email Us</h4>
-                  <p className="text-gray-300 text-sm">info@ceyloncredit.lk</p>
+                  <p className="text-gray-400 text-sm">info@ceyloncredit.lk</p>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="w-11 h-11 bg-[#D4AF37] text-black rounded-xl flex items-center justify-center flex-shrink-0">
+              <div className="relative flex items-start gap-4">
+                <div className="w-11 h-11 bg-gradient-to-br from-[#f0d67a] via-[#D4AF37] to-[#b8892a] text-black rounded-xl flex items-center justify-center flex-shrink-0">
                   <Clock size={20} />
                 </div>
                 <div>
                   <h4 className="font-bold mb-1">Working Hours</h4>
-                  <p className="text-gray-300 text-sm">Mon - Fri: 8.30 AM - 5.00 PM<br />Saturday: 9.00 AM - 1.00 PM</p>
+                  <p className="text-gray-400 text-sm">Mon - Fri: 8.30 AM - 5.00 PM<br />Saturday: 9.00 AM - 1.00 PM</p>
                 </div>
               </div>
             </motion.div>
@@ -121,10 +127,10 @@ export default function ContactPage() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-3 bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-gray-100"
+            className="lg:col-span-3 bg-white p-8 md:p-10 rounded-[2rem] shadow-2xl border border-gray-100"
           >
             <h2 className="text-2xl font-extrabold text-black mb-1">Send Us a Message</h2>
-            <div className="w-14 h-1 bg-[#D4AF37] rounded-full mb-8"></div>
+            <div className="w-14 h-1 bg-gradient-to-r from-[#f0d67a] via-[#D4AF37] to-[#b8892a] rounded-full mb-8"></div>
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid md:grid-cols-2 gap-5">
@@ -135,7 +141,7 @@ export default function ContactPage() {
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] outline-none transition"
+                    className="w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none transition"
                     placeholder="Your Name"
                   />
                 </div>
@@ -146,7 +152,7 @@ export default function ContactPage() {
                     required
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] outline-none transition"
+                    className="w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none transition"
                     placeholder="+94 77 XXX XXXX"
                   />
                 </div>
@@ -159,7 +165,7 @@ export default function ContactPage() {
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] outline-none transition"
+                    className="w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none transition"
                     placeholder="you@example.com"
                   />
                 </div>
@@ -168,7 +174,7 @@ export default function ContactPage() {
                   <select
                     value={formData.service}
                     onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                    className="w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] outline-none transition appearance-none text-gray-700"
+                    className="w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none transition appearance-none text-gray-700"
                   >
                     <option value="">Select a service</option>
                     <option value="Microfinance Group Loans">Microfinance Group Loans</option>
@@ -188,7 +194,7 @@ export default function ContactPage() {
                   required
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] outline-none transition resize-none"
+                  className="w-full px-4 py-3.5 rounded-xl bg-gray-50 border border-gray-200 focus:ring-2 focus:ring-[#D4AF37] focus:border-[#D4AF37] outline-none transition resize-none"
                   placeholder="How can we help you?"
                 ></textarea>
               </div>
@@ -196,7 +202,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 disabled={status.type === "loading"}
-                className="w-full bg-black hover:bg-zinc-900 text-white font-bold text-lg py-4 rounded-xl transition-all duration-300 shadow-lg flex items-center justify-center gap-2 disabled:opacity-60"
+                className="w-full bg-black hover:bg-gray-900 text-white font-bold text-lg py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2 disabled:opacity-60"
               >
                 <span>{status.type === "loading" ? "Sending..." : "Send Message"}</span>
                 <Send size={18} />
