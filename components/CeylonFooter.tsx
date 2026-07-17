@@ -73,7 +73,9 @@ export default function CeylonFooter() {
             </li>
             <li className="flex items-start space-x-3">
               <Phone size={16} className="text-[#D4AF37] mt-1 flex-shrink-0" />
-              <span>+94 36 223 7489</span>
+            
+               <p className="text-gray-400 text-sm">+94 77 717 2970</p>
+                   <p className="text-gray-400 text-sm">+94 71 069 0888</p>
             </li>
             <li className="flex items-start space-x-3">
               <Mail size={16} className="text-[#D4AF37] mt-1 flex-shrink-0" />
@@ -84,7 +86,7 @@ export default function CeylonFooter() {
       </div>
 
       <div className="relative max-w-7xl mx-auto mt-14 pt-8 border-t border-white/10 text-center text-xs text-gray-500">
-        <p>© {new Date().getFullYear()} Ceylon Credit Business (Pvt) Ltd — A Division of MJ Lanka Group of Company. All Rights Reserved.</p>
+        <p>© {new Date().getFullYear()} Ceylon Credit Business (Pvt) Ltd - A Division of MJ Lanka Group of Company. All Rights Reserved.</p>
       </div>
     </footer>
   );
