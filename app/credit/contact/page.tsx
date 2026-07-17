@@ -98,7 +98,8 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h4 className="font-bold mb-1">Call Us</h4>
-                  <p className="text-gray-400 text-sm">+94 36 223 7489</p>
+                  <p className="text-gray-400 text-sm">+94 77 717 2970</p>
+                   <p className="text-gray-400 text-sm">+94 71 069 0888</p>
                 </div>
               </div>
               <div className="relative flex items-start gap-4">
