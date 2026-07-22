@@ -9,7 +9,7 @@ export default function Footer() {
         {/* 1. Company Info */}
         <div className="space-y-6">
           <Link href="/">
-            {/* ඔයාගේ Logo එක තියෙනවනම් මෙතන src එක මාරු කරන්න */}
+          
             <Image src="/logo.png" alt="Logo" width={80} height={80} className="rounded-xl" />
           </Link>
           <p className="text-sm leading-relaxed">
@@ -22,10 +22,10 @@ export default function Footer() {
           <h3 className="text-white font-bold text-lg mb-6">Company</h3>
           <ul className="space-y-3 text-sm">
             <li><Link href="/" className="hover:text-[#E53935] transition">Home</Link></li>
-            <li><Link href="/about" className="hover:text-[#E53935] transition">About Us</Link></li>
-            <li><Link href="/services" className="hover:text-[#E53935] transition">Services</Link></li>
-            <li><Link href="/valuation" className="hover:text-[#E53935] transition">Valuations</Link></li>
-            <li><Link href="/contact" className="hover:text-[#E53935] transition">Contact</Link></li>
+            <li><Link href="/motors/about" className="hover:text-[#E53935] transition">About Us</Link></li>
+            <li><Link href="/motors/services" className="hover:text-[#E53935] transition">Services</Link></li>
+            <li><Link href="/motors/valuations" className="hover:text-[#E53935] transition">Valuations</Link></li>
+            <li><Link href="/motors/contact" className="hover:text-[#E53935] transition">Contact</Link></li>
           </ul>
         </div>
 
@@ -33,10 +33,10 @@ export default function Footer() {
         <div>
           <h3 className="text-white font-bold text-lg mb-6">Our Services</h3>
           <ul className="space-y-3 text-sm">
-            <li><Link href="/services" className="hover:text-[#E53935] transition">Certificate of Valuation</Link></li>
-            <li><Link href="/services" className="hover:text-[#E53935] transition">Pre Accident Valuations</Link></li>
-            <li><Link href="/services" className="hover:text-[#E53935] transition">Auction & Yard Valuations</Link></li>
-            <li><Link href="/services" className="hover:text-[#E53935] transition">Consultation Services</Link></li>
+            <li><Link href="/motors/services" className="hover:text-[#E53935] transition">Certificate of Valuation</Link></li>
+            <li><Link href="/motors/services" className="hover:text-[#E53935] transition">Pre Accident Valuations</Link></li>
+            <li><Link href="/motors/services" className="hover:text-[#E53935] transition">Auction & Yard Valuations</Link></li>
+            <li><Link href="/motors/services" className="hover:text-[#E53935] transition">Consultation Services</Link></li>
           </ul>
         </div>
 
