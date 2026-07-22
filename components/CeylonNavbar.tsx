@@ -18,19 +18,42 @@ export default function CeylonNavbar() {
 
   return (
     <header className="w-full sticky top-0 z-50">
-      {/* --- Top Contact Bar --- */}
-      <div className="bg-black text-gray-300 text-xs md:text-[13px] py-2 px-6 md:px-12 flex flex-col sm:flex-row justify-between items-center gap-1.5 sm:gap-0">
-        <span className="flex items-center gap-2">
+      {/* --- Top Contact Bar — 3-column so center button is truly centered --- */}
+      <div className="bg-black text-gray-300 text-xs md:text-[13px] py-2 px-6 md:px-12 grid grid-cols-3 items-center">
+
+        {/* Left — Hours */}
+        <span className="flex items-center gap-2 justify-start">
           <Phone size={13} className="text-[#D4AF37]" />
-          Open Hours - Mon - Fri: 8.30 AM - 5.00 PM | Saturday: 9.00 AM - 1.00 PM
+          <span className="hidden lg:inline">Open Hours - Mon - Fri: 8.30 AM - 5.00 PM | Saturday: 9.00 AM - 1.00 PM</span>
+          <span className="lg:hidden">Mon–Fri: 8.30–5.00 | Sat: 9.00–1.00</span>
         </span>
-        <div className="flex items-center gap-5">
-          <a href="mailto:info@ceyloncredit.lk" className="flex items-center gap-2 hover:text-[#D4AF37] transition-colors duration-300">
+
+        {/* Center — MJ Lanka Group Home Button */}
+        <div className="flex justify-center">
+          <Link
+            href="/"
+            className="group flex items-center gap-1.5 transition-all duration-300"
+          >
+            <span className="flex items-center gap-1.5 px-3 py-1 rounded-full border border-[#D4AF37]/30 group-hover:border-[#D4AF37]/70 bg-[#D4AF37]/8 group-hover:bg-[#D4AF37]/18 transition-all duration-300" style={{ boxShadow: "0 0 10px rgba(212,175,55,0.08)" }}>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-[#D4AF37]/60 group-hover:text-[#D4AF37] transition-colors duration-300">
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+              <span className="text-[10.5px] font-semibold tracking-wide text-[#D4AF37]/60 group-hover:text-[#D4AF37] transition-colors duration-300 whitespace-nowrap">
+                MJ Lanka Group
+              </span>
+            </span>
+          </Link>
+        </div>
+
+        {/* Right — Email + Social */}
+        <div className="flex items-center gap-5 justify-end">
+          <a href="mailto:info@ceyloncredit.lk" className="hidden sm:flex items-center gap-2 hover:text-[#D4AF37] transition-colors duration-300">
             <Mail size={13} />
             info@ceyloncredit.lk
           </a>
           <a href="#" aria-label="Facebook" className="hover:text-[#D4AF37] transition-colors duration-300">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.91h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z" /></svg>
           </a>
         </div>
       </div>
@@ -63,23 +86,63 @@ export default function CeylonNavbar() {
                   {link.label}
                 </span>
                 <span
-                  className={`absolute -bottom-1 left-0 h-[2px] bg-[#D4AF37] transition-all duration-300 ${
-                    active ? "w-full" : "w-0 group-hover:w-full"
-                  }`}
+                  className={`absolute -bottom-1 left-0 h-[2px] bg-[#D4AF37] transition-all duration-300 ${active ? "w-full" : "w-0 group-hover:w-full"
+                    }`}
                 ></span>
               </Link>
             );
           })}
         </div>
 
-        {/* Call Now Button */}
-        <a
-          href="tel:+94362237489"
-          className="hidden md:flex items-center gap-2 bg-gradient-to-r from-[#f0d67a] via-[#D4AF37] to-[#b8892a] hover:brightness-110 text-black px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 shadow-[0_6px_20px_rgba(212,175,55,0.35)] hover:shadow-[0_8px_28px_rgba(212,175,55,0.55)] hover:-translate-y-0.5"
-        >
-          <Phone size={16} />
-          Call Now
-        </a>
+        {/* Right side: Brand Switcher + Call Now */}
+        <div className="hidden md:flex items-center gap-3">
+
+          {/* ✨ Brand Switcher Pill — gold theme (Credit active) */}
+          <div
+            className="relative flex items-center rounded-full p-[3px] text-[11px] font-bold tracking-wide overflow-hidden"
+            style={{
+              background: "linear-gradient(135deg, #1a1505, #12100a)",
+              border: "1px solid rgba(212,175,55,0.45)",
+              boxShadow: "0 0 16px rgba(212,175,55,0.18)",
+            }}
+          >
+            {/* Gold sliding indicator — on Credit side (right) */}
+            <span
+              className="absolute top-[3px] h-[calc(100%-6px)] rounded-full"
+              style={{
+                width: "calc(50% - 3px)",
+                left: "calc(50%)",
+                background: "linear-gradient(135deg, #f0d67a, #D4AF37, #b8892a)",
+                boxShadow: "0 0 12px rgba(212,175,55,0.65)",
+              }}
+            />
+            {/* Motors Tab — inactive */}
+            <Link
+              href="/motors"
+              className="relative z-10 flex items-center gap-1.5 px-4 py-1.5 rounded-full transition-all duration-300 whitespace-nowrap text-gray-400 hover:text-gray-200"
+            >
+              <span>🚗</span>
+              <span>Motors</span>
+            </Link>
+            {/* Credit Tab — active */}
+            <Link
+              href="/credit"
+              className="relative z-10 flex items-center gap-1.5 px-4 py-1.5 rounded-full transition-all duration-300 whitespace-nowrap text-black"
+            >
+              <span>💳</span>
+              <span>Credit</span>
+            </Link>
+          </div>
+
+          {/* Call Now Button */}
+          <a
+            href="tel:+94362237489"
+            className="flex items-center gap-2 bg-gradient-to-r from-[#f0d67a] via-[#D4AF37] to-[#b8892a] hover:brightness-110 text-black px-6 py-2.5 rounded-full font-bold text-sm transition-all duration-300 shadow-[0_6px_20px_rgba(212,175,55,0.35)] hover:shadow-[0_8px_28px_rgba(212,175,55,0.55)] hover:-translate-y-0.5"
+          >
+            <Phone size={16} />
+            Call Now
+          </a>
+        </div>
 
         {/* Mobile Menu Button */}
         <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
@@ -94,9 +157,8 @@ export default function CeylonNavbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`font-medium transition-colors duration-300 ${
-                pathname === link.href ? "text-[#D4AF37]" : "hover:text-[#D4AF37]"
-              }`}
+              className={`font-medium transition-colors duration-300 ${pathname === link.href ? "text-[#D4AF37]" : "hover:text-[#D4AF37]"
+                }`}
               onClick={() => setIsOpen(false)}
             >
               {link.label}
@@ -109,6 +171,32 @@ export default function CeylonNavbar() {
           >
             Call Now
           </a>
+
+          {/* Mobile Brand Switcher */}
+          <div className="pt-3 border-t border-[#D4AF37]/20">
+            <p className="text-gray-500 text-[10px] uppercase tracking-widest mb-3">Switch Section</p>
+            <div className="flex gap-3">
+              <Link
+                href="/motors"
+                onClick={() => setIsOpen(false)}
+                className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-bold bg-white/10 text-gray-300 hover:bg-white/20 transition-all duration-300"
+              >
+                🚗 MJ Motors
+              </Link>
+              <Link
+                href="/credit"
+                onClick={() => setIsOpen(false)}
+                style={{
+                  background: "linear-gradient(135deg, #f0d67a, #D4AF37, #b8892a)",
+                  boxShadow: "0 4px 16px rgba(212,175,55,0.35)",
+                  color: "#000",
+                }}
+                className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-bold transition-all duration-300"
+              >
+                💳 Ceylon Credit
+              </Link>
+            </div>
+          </div>
         </div>
       )}
     </header>
