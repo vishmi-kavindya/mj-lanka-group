@@ -5,20 +5,19 @@ import Link from "next/link";
 import { Car, CarFront, Landmark, ArrowRight } from "lucide-react";
 
 const backgroundImages = [
-  "/vehicle-images-api.png", // ඔයාගේ පින්තූර වල නම් වලට මේවා වෙනස් කරන්න
+  "/vehicle-images-api.png",
   "/home2.webp",
   "/hmoe3.jpg",
 ];
 
 export default function GroupLandingPage() {
   const [currentImage, setCurrentImage] = useState(0);
-  const [isLoaded, setIsLoaded] = useState(false); // Text Animation එකට අලුතින් ගත්ත state එක
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // පිටුව ලෝඩ් වුණාම Text ඇනිමේෂන් එක පටන් ගන්න
+   
     setIsLoaded(true);
 
-    // පින්තූර මාරු වෙන වෙලාව තත්පර 3.5කට (3500ms) අඩු කරලා තියෙන්නේ
     const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % backgroundImages.length);
     }, 3500);
@@ -52,7 +51,6 @@ export default function GroupLandingPage() {
       {/* Main Content */}
       <div className="relative z-30 flex-1 flex flex-col items-center justify-center w-full py-16 sm:py-12 px-4 sm:px-6">
 
-        {/* --- අලුතින් වෙනස් කරපු මාතෘකා කොටස (Staggered Cinematic Animation) --- */}
         <div className="text-center mb-10 sm:mb-16 px-2 flex flex-col items-center w-full">
           {/* Main Title */}
           <h1
@@ -81,7 +79,6 @@ export default function GroupLandingPage() {
           </p>
         </div>
 
-        {/* සමාගම් දෙක පෙන්වන කොටුව */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8 w-full max-w-5xl px-3 sm:px-0">
 
           {/* MJ Motors Card */}
