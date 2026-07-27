@@ -20,7 +20,7 @@ export default function ContactPage() {
 
 const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
-  setStatus({ type: 'loading', message: 'Sending...' }); // පණිවිඩය යවන අතරතුර
+  setStatus({ type: 'loading', message: 'Sending...' }); 
 
   try {
     const res = await fetch('/api/contact', {
@@ -47,7 +47,7 @@ const handleSubmit = async (e: React.FormEvent) => {
       {/* --- 1. Hero Section --- */}
       <section className="relative h-[450px] flex flex-col items-center justify-center text-center px-4 overflow-hidden bg-black">
         <Image 
-          src="/hmoe3.jpg" // ඔයාගේ public ෆෝල්ඩරේ තියෙන පින්තූරයක් දෙන්න (Contact වලට ගැලපෙන)
+          src="/hmoe3.jpg" 
           alt="Contact MJ Motors" 
           fill 
           className="object-cover opacity-60" 
@@ -138,7 +138,7 @@ const handleSubmit = async (e: React.FormEvent) => {
               <Mail className="text-red-500" size={26} />
             </div>
             <h3 className="text-xl font-bold text-white mb-3">Email Us</h3>
-            <p className="text-gray-300 text-sm md:text-base break-all mt-2">mjmotorsah<br/>@gmail.com</p>
+            <p className="text-gray-300 text-sm md:text-base break-all mt-2">mjmotorsah@gmail.com<br/></p>
           </motion.div>
 
           {/* 5. Working Hours Card */}

@@ -6,7 +6,7 @@ const stats = [
   { label: "Hours of Works", count: 65250, icon: "💼" },
   { label: "Happy Customers", count: 23160, icon: "👍" },
   { label: "Experienced Workers", count: 1500, icon: "👥" },
-  { label: "Years of Experience", count: 20, icon: "🎖️" },
+  { label: "Years of Experience", count: 10, icon: "🎖️" },
 ];
 
 export default function StatsCounter() {
