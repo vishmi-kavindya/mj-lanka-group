@@ -100,7 +100,7 @@ export default function Navbar() {
                 {isMotors ? 'MJ Motors' : 'MJ Lanka'}
               </p>
               <p className="text-gray-500 text-[9px] md:text-[10px] uppercase tracking-wider leading-tight">
-                {isMotors ? 'Lanka Group (Pvt) Ltd' : 'Group of Company'}
+                {isMotors ? '(Pvt) Ltd' : 'Group of Company'}
               </p>
             </div>
           )}

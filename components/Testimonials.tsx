@@ -20,7 +20,7 @@ export default function Testimonials() {
   return (
     <section className="py-24 bg-black text-white px-6">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16">
-        {/* වම් පැත්ත: Title */}
+    
         <div className="md:w-1/3">
           <p className="text-red-600 font-bold tracking-widest text-sm uppercase mb-3">Testimonials</p>
           <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">What They Says</h2>
