@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Menu, X, Phone, Mail } from "lucide-react";
+import { Menu, X, Phone, Mail, Home, Users, Settings, PhoneCall, Banknote, Building2, Car, CreditCard } from "lucide-react";
 
 const navLinks = [
   { href: "/credit", label: "HOME" },
@@ -19,7 +19,7 @@ export default function CeylonNavbar() {
   return (
     <header className="w-full sticky top-0 z-50">
       {/* --- Top Contact Bar — 3-column so center button is truly centered --- */}
-      <div className="bg-black text-gray-300 text-xs md:text-[13px] py-2 px-6 md:px-12 grid grid-cols-3 items-center">
+      <div className="hidden md:grid bg-black text-gray-300 text-xs md:text-[13px] py-2 px-6 md:px-12 grid-cols-3 items-center">
 
         {/* Left — Hours */}
         <span className="flex items-center gap-2 justify-start">
@@ -62,7 +62,7 @@ export default function CeylonNavbar() {
       <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-70"></div>
 
       {/* --- Main Navbar --- */}
-      <nav className="bg-black/95 backdrop-blur-md text-white py-3 px-6 md:px-12 flex items-center justify-between shadow-[0_8px_30px_rgba(0,0,0,0.4)]">
+      <nav className="bg-black/95 backdrop-blur-md text-white py-3 px-4 md:px-12 flex items-center justify-between shadow-[0_8px_30px_rgba(0,0,0,0.4)]">
         {/* Logo */}
         <Link href="/credit" className="flex items-center gap-3 group">
           <img
@@ -70,9 +70,9 @@ export default function CeylonNavbar() {
             alt="Ceylon Credit Business"
             className="h-11 md:h-14 w-auto transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_10px_rgba(212,175,55,0.35)]"
           />
-          <div className="hidden md:block">
-            <h2 className="text-white font-bold text-lg leading-tight tracking-wide">CEYLON CREDIT</h2>
-            <p className="text-[#D4AF37] text-[10px] uppercase tracking-[0.2em]">Business (Pvt) Ltd</p>
+          <div className="block">
+            <h2 className="text-white font-bold text-sm md:text-lg leading-tight tracking-wide">CEYLON CREDIT</h2>
+            <p className="text-[#D4AF37] text-[9px] md:text-[10px] uppercase tracking-[0.2em]">Business (Pvt) Ltd</p>
           </div>
         </Link>
 
@@ -144,58 +144,139 @@ export default function CeylonNavbar() {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </nav>
-
-      {/* --- Mobile Dropdown Menu --- */}
-      {isOpen && (
-        <div className="md:hidden bg-black text-white flex flex-col space-y-4 px-6 py-6 border-t border-[#D4AF37]/30">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`font-medium transition-colors duration-300 ${pathname === link.href ? "text-[#D4AF37]" : "hover:text-[#D4AF37]"
-                }`}
-              onClick={() => setIsOpen(false)}
-            >
-              {link.label}
-            </Link>
-          ))}
+        {/* Mobile: Quick call + Hamburger */}
+        <div className="flex md:hidden items-center gap-2">
           <a
             href="tel:+94362237489"
-            className="bg-gradient-to-r from-[#f0d67a] via-[#D4AF37] to-[#b8892a] text-black text-center font-bold py-3 rounded-full"
-            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold"
+            style={{ background: 'rgba(212,175,55,0.12)', border: '1px solid rgba(212,175,55,0.35)', color: '#D4AF37' }}
           >
-            Call Now
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 1.18 2 2 0 012.05 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z" />
+            </svg>
+            Call
           </a>
+          <button
+            className="w-10 h-10 rounded-xl flex items-center justify-center text-white transition-all duration-300"
+            style={{ background: 'rgba(212,175,55,0.08)', border: '1px solid rgba(212,175,55,0.25)' }}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
+      </nav>
 
-          {/* Mobile Brand Switcher */}
-          <div className="pt-3 border-t border-[#D4AF37]/20">
-            <p className="text-gray-500 text-[10px] uppercase tracking-widest mb-3">Switch Section</p>
-            <div className="flex gap-3">
+      {/* ── Mobile Full-Screen Menu ── */}
+      {isOpen && (
+        <div className="md:hidden fixed inset-0 z-[999] flex flex-col"
+          style={{ background: 'linear-gradient(160deg, #0a0a0a 0%, #0f0d02 50%, #0a0a0a 100%)' }}
+        >
+          {/* Gold glow */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-72 h-40 rounded-full pointer-events-none opacity-25"
+            style={{ background: 'radial-gradient(ellipse, rgba(212,175,55,0.5) 0%, transparent 70%)' }}
+          />
+
+          {/* Header */}
+          <div className="relative flex items-center justify-between px-5 py-4 border-b border-[#D4AF37]/15">
+            <div className="flex items-center gap-3">
+              <img src="/ceylon-logo.png" alt="Ceylon Credit" className="h-10 w-auto drop-shadow-[0_0_8px_rgba(212,175,55,0.4)]" />
+              <div>
+                <p className="text-white font-bold text-sm">CEYLON CREDIT</p>
+                <p className="text-[10px] font-medium" style={{ color: '#D4AF37' }}>Business (Pvt) Ltd</p>
+              </div>
+            </div>
+            <button
+              onClick={() => setIsOpen(false)}
+              className="w-10 h-10 rounded-xl flex items-center justify-center text-white"
+              style={{ background: 'rgba(212,175,55,0.08)', border: '1px solid rgba(212,175,55,0.25)' }}
+            >
+              <X size={20} />
+            </button>
+          </div>
+
+          {/* Links */}
+          <div className="flex-1 overflow-y-auto px-5 pt-6 pb-4 space-y-1">
+            {[
+              { label: 'Home', href: '/credit', icon: <Home size={18} /> },
+              { label: 'About Us', href: '/credit/about', icon: <Users size={18} /> },
+              { label: 'Services', href: '/credit/services', icon: <Settings size={18} /> },
+              { label: 'Contact Us', href: '/credit/contact', icon: <PhoneCall size={18} /> },
+            ].map((item) => (
               <Link
-                href="/motors"
+                key={item.label}
+                href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-bold bg-white/10 text-gray-300 hover:bg-white/20 transition-all duration-300"
+                className="flex items-center justify-between w-full px-4 py-4 rounded-2xl text-white font-medium transition-all active:scale-[0.98]"
+                style={{ background: 'rgba(212,175,55,0.04)', border: '1px solid rgba(212,175,55,0.08)' }}
               >
-                🚗 MJ Motors
+                <div className="flex items-center gap-3">
+                  <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#D4AF37]/10 text-[#D4AF37]">
+                    {item.icon}
+                  </span>
+                  <span className="text-[15px]">{item.label}</span>
+                </div>
+                <span style={{ color: '#D4AF37' }} className="text-lg">›</span>
               </Link>
+            ))}
+
+            {/* Primary CTA */}
+            <div className="pt-3">
               <Link
-                href="/credit"
+                href="/credit/booking"
                 onClick={() => setIsOpen(false)}
-                style={{
-                  background: "linear-gradient(135deg, #f0d67a, #D4AF37, #b8892a)",
-                  boxShadow: "0 4px 16px rgba(212,175,55,0.35)",
-                  color: "#000",
-                }}
-                className="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-bold transition-all duration-300"
+                className="flex items-center justify-center gap-2 w-full py-4 rounded-2xl text-base font-bold transition-all active:scale-[0.97] hover:brightness-110"
+                style={{ background: 'linear-gradient(135deg, #f0d67a, #D4AF37, #b8892a)', color: '#000', boxShadow: '0 8px 30px rgba(212,175,55,0.4)' }}
               >
-                💳 Ceylon Credit
+                <Banknote size={18} /> Apply for Loan
               </Link>
             </div>
+
+            {/* Quick actions */}
+            <div className="grid grid-cols-2 gap-3 pt-1">
+              <a
+                href="tel:+94362237489"
+                className="flex items-center justify-center gap-2 py-3 rounded-2xl text-sm font-semibold transition-all hover:bg-white/5"
+                style={{ background: 'rgba(212,175,55,0.06)', border: '1px solid rgba(212,175,55,0.15)', color: '#d1d5db' }}
+              >
+                <Phone size={16} /> Call Us
+              </a>
+              <Link
+                href="/"
+                onClick={() => setIsOpen(false)}
+                className="flex items-center justify-center gap-2 py-3 rounded-2xl text-sm font-semibold transition-all hover:bg-white/5"
+                style={{ background: 'rgba(212,175,55,0.06)', border: '1px solid rgba(212,175,55,0.15)', color: '#d1d5db' }}
+              >
+                <Building2 size={16} /> MJ Lanka
+              </Link>
+            </div>
+
+            {/* Switch Division */}
+            <div className="pt-5 border-t border-[#D4AF37]/10 mt-2">
+              <p className="text-gray-600 text-[10px] uppercase tracking-[0.18em] mb-3 px-1">Switch Division</p>
+              <div className="grid grid-cols-2 gap-3">
+                <Link
+                  href="/motors"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center justify-center gap-2 py-3.5 rounded-2xl text-sm font-bold transition-all hover:brightness-110"
+                  style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)', color: '#9ca3af' }}
+                >
+                  <Car size={16} /> MJ Motors
+                </Link>
+                <Link
+                  href="/credit"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center justify-center gap-2 py-3.5 rounded-2xl text-sm font-bold transition-all hover:brightness-110"
+                  style={{ background: 'linear-gradient(135deg, #f0d67a, #D4AF37, #b8892a)', color: '#000', boxShadow: '0 4px 16px rgba(212,175,55,0.35)' }}
+                >
+                  <CreditCard size={16} /> Ceylon Credit
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom */}
+          <div className="px-5 py-4 border-t border-[#D4AF37]/10">
+            <p className="text-center text-gray-700 text-[10px] uppercase tracking-wider">Ceylon Credit Business (Pvt) Ltd</p>
           </div>
         </div>
       )}
