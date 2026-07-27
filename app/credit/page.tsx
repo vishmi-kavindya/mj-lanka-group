@@ -29,15 +29,15 @@ const services = [
 const whyChooseUs = [
   { icon: Clock, label: "Same Day Lending" },
   { icon: HomeIcon, label: "Door Step Service" },
-  { icon: Award, label: "10+ Years Of Excellence" },
+  { icon: Award, label: "1+ Years Of Excellence" },
   { icon: ShieldCheck, label: "Comprehensive Advice" },
 ];
 
 const stats = [
   { icon: Users, val: "12,500+", label: "Customers Served" },
   { icon: Briefcase, val: "80+", label: "Employees" },
-  { icon: Award, val: "10+", label: "Years In Business" },
-  { icon: Wallet, val: "5+", label: "Branches" },
+  { icon: Award, val: "1+", label: "Years In Business" },
+  { icon: Wallet, val: "1+", label: "Branches" },
 ];
 
 const testimonials = [
@@ -204,7 +204,7 @@ export default function CreditPage() {
           <div className="absolute -inset-3 rounded-[2.5rem] border border-[#D4AF37]/30 -z-10"></div>
           <img src="/credit.jpg" alt="Ceylon Credit Business" className="rounded-[2rem] shadow-2xl object-cover w-full h-[420px]" />
           <div className="absolute -bottom-6 -right-6 bg-black border border-[#D4AF37]/40 text-white px-7 py-5 rounded-2xl shadow-2xl">
-            <h3 className="text-3xl font-black text-[#D4AF37] leading-none mb-1">10+</h3>
+            <h3 className="text-3xl font-black text-[#D4AF37] leading-none mb-1">1+</h3>
             <p className="text-xs uppercase tracking-widest text-gray-300">Years of Trust</p>
           </div>
         </motion.div>
@@ -272,7 +272,7 @@ export default function CreditPage() {
         <div className="relative">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-5">Ready to get started?</h2>
           <p className="text-gray-400 mb-9 max-w-xl mx-auto">
-            Apply online in minutes or visit our office — our team is ready to help you find the right facility.
+            Apply online in minutes or visit our office - our team is ready to help you find the right facility.
           </p>
           <Link
             href="/credit/booking"

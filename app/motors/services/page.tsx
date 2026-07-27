@@ -169,7 +169,7 @@ export default function Services() {
         <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
           Contact our team of experts to schedule an appointment or to learn more about how we can assist you with your specific needs.
         </p>
-        <Link href="/contact" className="bg-white text-red-700 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition-colors shadow-lg inline-block">
+        <Link href="/motors/contact" className="bg-white text-red-700 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition-colors shadow-lg inline-block">
           Contact Us Now
         </Link>
       </section>
