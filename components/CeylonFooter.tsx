@@ -73,9 +73,10 @@ export default function CeylonFooter() {
             </li>
             <li className="flex items-start space-x-3">
               <Phone size={16} className="text-[#D4AF37] mt-1 flex-shrink-0" />
-            
-               <p className="text-gray-400 text-sm">+94 77 717 2970</p>
-                   <p className="text-gray-400 text-sm">+94 71 069 0888</p>
+              <div className="space-y-1">
+                <p className="text-gray-400 text-sm">+94 77 717 2970</p>
+                <p className="text-gray-400 text-sm">+94 71 069 0888</p>
+              </div>
             </li>
             <li className="flex items-start space-x-3">
               <Mail size={16} className="text-[#D4AF37] mt-1 flex-shrink-0" />

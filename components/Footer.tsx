@@ -13,7 +13,7 @@ export default function Footer() {
             <Image src="/logo.png" alt="Logo" width={80} height={80} className="rounded-xl" />
           </Link>
           <p className="text-sm leading-relaxed">
-            For over a decade, <strong className="text-white">MJ Lanka Group of Company (Pvt) Ltd.</strong> has grown into Sri Lanka's leading valuation firm, trusted for accuracy, integrity, and unmatched professional standards.
+            For over a decade, <strong className="text-white">MJ Motors.</strong> has grown into Sri Lanka's leading valuation firm, trusted for accuracy, integrity, and unmatched professional standards.
           </p>
         </div>
 
@@ -47,15 +47,19 @@ export default function Footer() {
             <li className="flex items-start space-x-3">
               <span className="text-[#E53935] mt-1">📍</span>
               <div>
-                <strong className="text-gray-200 block mb-1">Head Office:</strong>
-                No. 268/1 Ratnapura Road, <br />Getaheththa, Sri Lanka.
+                Head Office: No. 268/1 Ratnapura Road, Getaheththa, Sri Lanka.
+              </div>
+            </li>
+            <li className="flex items-start space-x-3">
+              <span className="text-[#E53935] mt-1">📍</span>
+              <div>
+                City Office: No. 15/2, Kandy Road, Colombo, Sri Lanka.
               </div>
             </li>
             <li className="flex items-start space-x-3">
               <span className="text-[#E53935] mt-1">📞</span>
               <div>
-                <strong className="text-gray-200 block mb-1">Call Us:</strong>
-                +94 36 223 7489
+                Call Us: +94 36 223 7489
               </div>
             </li>
           </ul>
@@ -64,7 +68,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-gray-800 text-center text-xs">
-        <p>© {new Date().getFullYear()} MJ Lanka Group of Company (Pvt) Ltd. All Rights Reserved.</p>
+        <p>© {new Date().getFullYear()} MJ Motors. All Rights Reserved.</p>
       </div>
     </footer>
   );

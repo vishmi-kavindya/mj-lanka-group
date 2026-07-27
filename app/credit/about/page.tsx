@@ -31,7 +31,7 @@ const values = [
   },
   {
     icon: Award,
-    title: "10+ Years Of Excellence",
+    title: "1+ Years Of Excellence",
     desc: "A decade of trusted service under the MJ Lanka Group of Company.",
   },
 ];
@@ -86,7 +86,7 @@ export default function AboutPage() {
               <img src="/finance.jpg" alt="Ceylon Credit Business Office" className="w-full h-full object-cover absolute inset-0" />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-black border border-[#D4AF37]/40 text-white px-7 py-5 rounded-2xl shadow-2xl">
-              <h3 className="text-3xl font-black text-[#D4AF37] leading-none mb-1">10+</h3>
+              <h3 className="text-3xl font-black text-[#D4AF37] leading-none mb-1">1+</h3>
               <p className="text-xs uppercase tracking-widest text-gray-300">Years of Trust</p>
             </div>
           </motion.div>
