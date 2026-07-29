@@ -29,7 +29,7 @@ export default function LoanApplicationPage() {
     setStatus("Processing...");
 
     try {
-      const res = await fetch("/api/booking", {
+      const res = await fetch("/api/credit/booking", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

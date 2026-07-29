@@ -20,7 +20,7 @@ export default function ContactPage() {
     setStatus({ type: "loading", message: "Sending..." });
 
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("/api/credit/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
