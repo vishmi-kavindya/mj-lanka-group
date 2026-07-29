@@ -39,26 +39,40 @@ const services = [
 export default function ServicesPage() {
   return (
     <div className="bg-white">
-      {/* --- Hero Section --- */}
-      <section className="relative w-full h-[380px] md:h-[430px] bg-black overflow-hidden">
-        <img src="/finance.jpg" alt="Ceylon Credit Services" className="absolute inset-0 w-full h-full object-cover opacity-40" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-black/40"></div>
-        <div className="pointer-events-none absolute top-10 right-10 w-72 h-72 bg-[#D4AF37]/10 blur-[100px] rounded-full"></div>
+      {/* --- Hero Section — matches About page style --- */}
+      <section className="relative h-[420px] flex flex-col items-center justify-center text-center px-4 overflow-hidden bg-black">
+        <img src="/finance.jpg" alt="Ceylon Credit Services" className="absolute inset-0 w-full h-full object-cover opacity-25" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/75 to-black" />
+        {/* Gold centre glow */}
+        <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-72 bg-[#D4AF37]/10 blur-[110px] rounded-full" />
 
-        <div className="relative z-10 max-w-7xl mx-auto h-full flex items-end px-6 pb-14">
-          <div>
-            <span className="text-[#D4AF37] text-xs tracking-[0.25em] uppercase font-bold block mb-3">
-              What We Offer
-            </span>
-            <h1 className="text-4xl md:text-5xl font-extrabold uppercase tracking-wide text-white mb-4">
-              Services
-            </h1>
-            <div className="flex items-center gap-2 text-xs md:text-sm font-semibold tracking-widest uppercase text-gray-300">
-              <Link href="/credit" className="hover:text-[#D4AF37] transition">Home</Link>
-              <span className="text-[#D4AF37]">&gt;</span>
-              <span className="text-[#D4AF37]">Services</span>
-            </div>
-          </div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4">
+          {/* Gold pill badge — same as About page */}
+          <span className="inline-block text-[#D4AF37] text-xs md:text-sm font-bold tracking-[0.2em] uppercase mb-6 border border-[#D4AF37]/40 bg-[#D4AF37]/10 rounded-full px-5 py-2">
+            What We Offer
+          </span>
+
+          {/* Animated heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-4xl md:text-5xl font-extrabold text-white drop-shadow-xl leading-snug mb-6"
+          >
+            Our Financial Services
+          </motion.h1>
+
+          {/* Animated breadcrumb */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="flex items-center justify-center space-x-3 text-sm md:text-base text-gray-300"
+          >
+            <Link href="/credit" className="hover:text-[#D4AF37] transition">Home</Link>
+            <span className="text-[#D4AF37] font-bold">&gt;</span>
+            <span className="text-white font-medium tracking-wide">Services</span>
+          </motion.div>
         </div>
       </section>
 

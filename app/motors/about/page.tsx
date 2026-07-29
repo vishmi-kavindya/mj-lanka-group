@@ -7,7 +7,7 @@ import { ShieldCheck, Target, Eye, Award, Clock, Users, GraduationCap, Building2
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-// ඔයාලා වැඩ කරන ආයතන ලැයිස්තුව
+
 const clients = [
   "Senkadagala Finance PLC", "AMW Capital Leasing & Finance PLC", "People's Leasing & Finance PLC", 
   "Ideal Finance LTD", "Lakderana Investment Ltd", "HNB Bank", "Pan Asia Bank", "SDB Bank", 
@@ -17,7 +17,7 @@ const clients = [
   "UB Finance", "Sanasa Society"
 ];
 
-// සුදුසුකම් ලැයිස්තුව
+
 const qualifications = [
   "Diploma in Automobile Repairing (German Tec College)",
   "Diploma in Automobile (Electrician) (German Tec College)",
@@ -69,7 +69,7 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-6 py-20 -mt-10 relative z-20">
         <div className="bg-white rounded-[2rem] shadow-xl p-8 md:p-14 border border-gray-100 flex flex-col lg:flex-row gap-12">
           
-          {/* වම් පැත්තේ පින්තූරය */}
+      
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}

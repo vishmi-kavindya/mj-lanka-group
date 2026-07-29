@@ -7,7 +7,7 @@ import { ChevronDown, ChevronUp } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
-// අලුත් Services ලැයිස්තුව (පින්තූර සහ ID අංක සමග)
+
 const servicesList = [
   {
     id: "01",
@@ -43,7 +43,7 @@ const servicesList = [
 ];
 
 export default function Services() {
-  // Card එක Click කළාම දිගෑරෙන එක පාලනය කරන State එක
+  
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   const toggleCard = (id: string) => {
@@ -61,13 +61,13 @@ export default function Services() {
       {/* --- 1. Hero Section (About Us Style) --- */}
       <section className="relative h-[450px] flex flex-col items-center justify-center text-center px-4 overflow-hidden bg-black">
         <Image 
-          src="/services.png" // Car Logos තියෙන පින්තූරය
+          src="/services.png" 
           alt="Our Services Background" 
           fill 
           className="object-cover opacity-60" 
         />
         
-        {/* මෙතනින් තමයි About Us එකේ වගේ යටට එද්දී සුදු පාටට Fade වෙන්න හැදුවේ (to-gray-50) */}
+
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-gray-50"></div>
         
         <div className="relative z-10 mt-16 max-w-5xl mx-auto px-4">
@@ -75,7 +75,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            // font-bold වෙනුවට font-medium පාවිච්චි කළා
+           
             className="text-4xl md:text-5xl lg:text-5xl font-medium text-white drop-shadow-xl leading-tight tracking-tight mb-6"
           >
             How We Create Value at MJ Lanka Group of Company (Pvt) Ltd.<br className="hidden md:block" /> 
@@ -103,7 +103,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* 2. Services Grid Section (අලුතින් එකතු කළ කොටස) */}
+      
       <section className="py-20 px-6 max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-gray-900">What We Offer</h2>
@@ -137,7 +137,7 @@ export default function Services() {
                 </span>
               </div>
 
-              {/* Title සහ Click කරාම පෙනෙන Description එක */}
+              
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex justify-between items-center">
                   <h3 className="text-xl font-bold text-gray-900 group-hover:text-red-600 transition-colors duration-300">
@@ -163,7 +163,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* 3. Call to Action (CTA) Section (ඔයාගේ පරණ කෝඩ් එක එහෙමම තියෙනවා) */}
+    
       <section className="bg-red-700 py-16 px-6 text-center text-white">
         <h2 className="text-3xl font-bold mb-6">Need a professional valuation today?</h2>
         <p className="text-lg mb-8 max-w-2xl mx-auto opacity-90">
